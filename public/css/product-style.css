@@ -1,0 +1,108 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 5px;
+    align-items: center;
+}
+
+.cardProduct {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px 80px;
+    grid-template-areas: "image" "text" "stats";
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: roboto;
+    text-align: center;
+    width: 300px;
+}
+
+.cardProduct-img {
+    grid-area: image;
+}
+.cardProduct-txt {
+    grid-area: text;
+}
+.cardProduct-desc {
+    grid-area: stats;
+}
+
+.cardProduct-img img {
+    margin-top: 0;
+    margin-left: 0;
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    height: 200px;
+    width: 300px;
+
+    background-size: cover;
+}
+
+.cardProduct-txt {
+    grid-area: text;
+    margin: 25px;
+}
+
+.cardProduct-txt p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+}
+.cardProduct-txt h2 {
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+.desc .price {
+    font-size: 20px;
+}
+
+.cardProduct-desc {
+    grid-area: stats;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #ffc107;
+    /* background: #0d6efd; */
+}
+
+.cardProduct-desc .desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+}
+
+.cardProduct:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.cardProduct {
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 30px;
+}
+
+@media screen and (max-width: 1400px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 4fr);
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .prpduct-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 4fr);
+        gap: 20px;
+        align-items: center;
+    }
+}
