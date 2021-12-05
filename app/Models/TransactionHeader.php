@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionHeader extends Model
 {
     use HasFactory;
+
+    public function transactionDetail()
+    {
+        $this->hasMany(TransactionDetail::class);
+    }
 }

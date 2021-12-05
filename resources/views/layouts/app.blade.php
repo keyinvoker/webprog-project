@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" href="https://www.pngall.com/wp-content/uploads/4/Leather-Bag-PNG.png">
+    <link rel="icon" href="{{ asset('storage/images/bag.png') }}">
     <title>DY.ID</title>
 
     <!-- Scripts -->
@@ -32,7 +32,7 @@
     <header class="navbar navbar-lg-nowrap navbar-light bg-warning">
         <div class="navbar">
             <a class="navbar-brand" href="#">
-                <img src="https://www.pngall.com/wp-content/uploads/4/Leather-Bag-PNG.png" width="50" height="50" alt="">
+                <img src="{{ asset('storage/images/bag.png') }}" width="50" height="50" alt="">
             </a>
             <a class="navbar-brand" href="#">
                 <h1>DY.ID</h1>
