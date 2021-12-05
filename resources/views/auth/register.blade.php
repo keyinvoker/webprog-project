@@ -26,7 +26,36 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email Address') }}</label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6 ">
+                                <input id="gender" type="radio" class="@error('gender')is-invalid @enderror" name="gender" required autocomplete="gender"><label>Male</label>
+                                <input id="gender" type="radio" class="@error('gender') is-invalid @enderror" name="gender" required autocomplete="gender"><label>Female</label>
+
+                                @error('gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6 ">
+                                <textarea id="address" type="textarea" class="form-control @error('address')is-invalid @enderror" name="address" required></textarea>
+
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -60,6 +89,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <input type="checkbox" name="tnc" id="tnc" required"> I agree to the terms & conditions
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

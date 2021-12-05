@@ -16,7 +16,7 @@ class CreateTransactionHeadersTable extends Migration
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('user')->on('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->date('date');
             //SUBTOTAL from 'TRANSACTION_DETAILS' table
             $table->integer('total');

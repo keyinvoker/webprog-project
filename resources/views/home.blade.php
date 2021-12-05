@@ -13,7 +13,7 @@
     @forelse ($product as $x)
     <div class="cardProduct">
         <div class="cardProduct-img">
-            <img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-40.png" alt="">
+            <img src="{{ Storage::url($x->image) }}" alt="No image" />
         </div>
         <div class="cardProduct-txt">
             <h2>{{ $x->name }}</h2>

@@ -11,11 +11,18 @@
     grid-template-rows: 210px 210px 80px;
     grid-template-areas: "image" "text" "stats";
     border-radius: 18px;
+    width: 300px;
     background: white;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     font-family: roboto;
     text-align: center;
-    width: 300px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    margin: 30px;
+}
+.cardProduct:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .cardProduct-img {
@@ -79,16 +86,6 @@
     padding: 10px;
 }
 
-.cardProduct:hover {
-    transform: scale(1.05);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-}
-.cardProduct {
-    transition: 0.5s ease;
-    cursor: pointer;
-    margin: 30px;
-}
-
 @media screen and (max-width: 1400px) {
     .product-grid {
         display: grid;
@@ -99,7 +96,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .prpduct-grid {
+    .product-grid {
         display: grid;
         grid-template-columns: repeat(2, 4fr);
         gap: 20px;

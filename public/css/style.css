@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fd7e14;
+    background-color: #ff970f;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
@@ -15,16 +15,16 @@
 }
 
 .search-box:hover > .search-btn {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .search-btn {
-    color: #ffca03;
+    color: #ffe652;
     float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #fd7e14;
+    background-color: #ff970f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
     outline: none;
     float: left;
     padding: 0;
-    color: white;
+    color: whitesmoke;
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
