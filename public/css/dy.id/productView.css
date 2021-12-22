@@ -1,0 +1,9 @@
+table{
+    vertical-align: middle;
+}
+tbody img{
+    max-width: 10rem !important;
+}
+#productViewDescription{
+    word-break: break-word;
+}

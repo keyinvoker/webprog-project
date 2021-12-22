@@ -1,0 +1,12 @@
+#footer {
+    height: 5vh !important;
+    background-image: radial-gradient(
+        circle farthest-corner at -8.9% 51.2%,
+        rgba(255, 120, 0, 1) 0%,
+        rgba(255, 124, 0, 1) 15.9%,
+        rgba(255, 163, 77, 1) 15.9%,
+        rgba(255, 163, 77, 1) 24.4%,
+        rgb(26 29 79) 24.5%,
+        rgb(32 28 45) 66%
+    );
+}

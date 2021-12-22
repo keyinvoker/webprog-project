@@ -1,27 +1,66 @@
 <?php
 
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/home', [PageController::class, 'home'])->name('home');
-Route::get('/login', [PageController::class, 'login'])->name('login');
-Route::get('/register', [PageController::class, 'register'])->name('register');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-Route::get('/detail_product', [ProductController::class, 'detail_product'])->name('detail_product');
+Auth::routes();
 
-Route::get('/cart', [PageController::class, 'cart'])->name('cart');
-Route::get('/edit_cart', [PageController::class, 'edit_cart'])->name('edit_cart');
+// Welcome Page Endpoint
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/history', [PageController::class, 'history'])->name('history');
+// Home Page Endpoint
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::get('/view_product', [ProductController::class, 'view_product'])->name('view_product');
-Route::get('/add_product', [ProductController::class, 'get_add_product'])->name('add_product');
-Route::get('/edit_product', [ProductController::class, 'get_edit_product'])->name('edit_product');
+// Product Page Endpoint
+Route::prefix('/products')->group(function () {
+    Route::get('/details', 'App\Http\Controllers\ProductController@getProductDetail')->name('products.detail');
+});
 
-Route::get('/view_category', [CategoryController::class, 'view_category'])->name('view_category');
-Route::get('/add_category', [CategoryController::class, 'get_add_category'])->name('add_category');
-Route::get('/edit_category', [CategoryController::class, 'get_edit_category'])->name('edit_category');
+// Cart Page Endpoint
+Route::prefix('/cart')->group(function () {
+    Route::post('/add/{productID}', 'App\Http\Controllers\CartController@addToCart')->name('cart.add')->middleware('auth');
+    Route::get('/details', 'App\Http\Controllers\CartController@getCartDetail')->name('cart.detail')->middleware('auth');
+    Route::post('/remove/{cartDetailID}', 'App\Http\Controllers\CartController@deleteFromCart')->name('cart.remove')->middleware('auth');
+    Route::get('/edit', 'App\Http\Controllers\CartController@getCartDetailEdit')->name('cart.getEdit')->middleware('auth');
+    Route::post('/edit/{cartDetailID}', 'App\Http\Controllers\CartController@editCartDetail')->name('cart.edit')->middleware('auth');
+    Route::post('/checkout/{cartID}', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
+});
 
-Route::get('/search/{product}', [PageController::class, 'search'])->name('search');
+//Transaction Page Endpoint
+Route::prefix('/transactions')->group(function () {
+    Route::get('', 'App\Http\Controllers\TransactionController@getTransactions')->name('transactions')->middleware('auth');
+});
+
+// Admin Page Endpoint
+Route::prefix('/admin')->group(function () {
+    Route::prefix('/products')->group(function () {
+        Route::get('/', 'App\Http\Controllers\AdminProductController@getProducts')->name('admin.products')->middleware('auth');
+        Route::get('/edit', 'App\Http\Controllers\AdminProductController@getUpdateProductPage')->name('admin.products.getUpdatePage')->middleware('auth');    
+        Route::post('/edit/{productID}', 'App\Http\Controllers\AdminProductController@updateProduct')->name('admin.products.update')->middleware('auth');
+        Route::post('/delete/{productID}', 'App\Http\Controllers\AdminProductController@deleteProduct')->name('admin.products.delete')->middleware('auth');
+        Route::get('/add', 'App\Http\Controllers\AdminProductController@getAddProductPage')->name('admin.products.getAddProductPage')->middleware('auth');
+        Route::post('/add', 'App\Http\Controllers\AdminProductController@addProduct')->name('admin.products.add')->middleware('auth');
+    });
+
+    Route::prefix('/categories')->group(function () {
+        Route::get('/', 'App\Http\Controllers\AdminCategoryController@getCategories')->name('admin.categories')->middleware('auth');
+        Route::get('/update', 'App\Http\Controllers\AdminCategoryController@getUpdateCategoryPage')->name('admin.categories.getUpdatePage')->middleware('auth');
+        Route::post('/update/{categoryID}', 'App\Http\Controllers\AdminCategoryController@updateCategory')->name('admin.categories.update')->middleware('auth');
+        Route::post('/delete/{categoryID}', 'App\Http\Controllers\AdminCategoryController@deleteCategory')->name('admin.categories.delete')->middleware('auth');
+        Route::get('/add', 'App\Http\Controllers\AdminCategoryController@getAddCategoryPage')->name('admin.categories.getAddCategory')->middleware('auth');
+        Route::post('/add', 'App\Http\Controllers\AdminCategoryController@addCategory')->name('admin.categories.add')->middleware('auth');
+    });
+    
+});
