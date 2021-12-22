@@ -1,0 +1,50 @@
+a:link {
+    text-decoration: none;
+  }
+  #mainWrapper{
+    margin-left: 10vw !important;
+  }
+  .card{
+      text-align: center;
+      padding-bottom: 0.7rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      max-width: 40vw !important;
+      color: whitesmoke;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.05)
+      );
+      backdrop-filter: blur(3rem);
+  }
+  .card-title{
+      color: whitesmoke;
+  }
+  
+  .card img{
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+  }
+  
+  .range{
+      width: 100%;
+  }
+
+  .form-group{
+        margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  ::-webkit-file-upload-button {
+    border: none;
+    border-radius: 0.4rem;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  ::-webkit-file-upload-button:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+  } 

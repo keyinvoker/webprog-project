@@ -1,0 +1,22 @@
+.card{
+    border-radius: 0 !important;
+    border:none !important;
+    text-align: center;
+    max-width: 45vw !important;
+}
+
+.card img{
+    margin: 1rem;
+    object-fit: contain;
+    border-radius: 0.6rem;
+    max-height: 10rem !important;
+}
+
+#emptyCart{
+    background-image: url('../../assets/images/bully.gif');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh !important;
+    border-radius: 1rem;
+}

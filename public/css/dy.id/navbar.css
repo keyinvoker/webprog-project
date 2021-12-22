@@ -1,0 +1,41 @@
+.navbar {
+    background: linear-gradient(180deg, #ff512f 5%, #ff512f 5%, #dd2476);
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 10vh !important;
+}
+.navbar-brand img {
+    max-width: 3rem;
+    max-height: fit-content !important;
+}
+.navbar-nav form {
+    display: flex;
+    flex-direction: row;
+}
+.navbar-nav button {
+    margin-right: 0.3rem;
+}
+
+.btn-grad-home {
+    background-image: linear-gradient(
+        to right,
+        #4cb8c4 0%,
+        #3cd3ad 51%,
+        #4cb8c4 100%
+    );
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    display: block;
+    margin-right: 2rem;
+}
+
+.btn-grad-home:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}

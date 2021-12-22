@@ -1,0 +1,31 @@
+#app{
+    background-color: #191c24;
+    font-family: 'Nunito', sans-serif;
+    max-height: 100% !important;
+}
+.content {
+    margin: 0;
+    position: relative;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 40vw;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(1rem);
+}
+.card-header{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

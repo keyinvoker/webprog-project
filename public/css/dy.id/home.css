@@ -1,0 +1,58 @@
+a:link {
+    text-decoration: none;
+}
+#cardContainer {
+    margin-left: 5rem;
+}
+h2 {
+    text-align: center;
+    width: 17rem;
+    font-size: 2rem;
+    background: -webkit-linear-gradient(70deg, #7a2e78, #b93856);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+.card {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 15rem;
+}
+.card-title {
+    color: black;
+}
+
+.card-img-top {
+    max-width: fit-content;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+#emptyProducts{
+    background-image: url('../../assets/images/bully.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh !important;
+    width: 60vw !important; 
+    border-radius: 1rem;
+}
+
+#unauthorized401{
+    background-image: url('../../assets/images/bully.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh !important;
+    width: 60vw !important; 
+    border-radius: 1rem;
+}

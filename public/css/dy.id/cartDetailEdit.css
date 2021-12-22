@@ -1,0 +1,99 @@
+a:link {
+    text-decoration: none;
+}
+
+.card {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.card-title {
+    color: black;
+}
+
+.card-img-top {
+    max-width: 80vw !important;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+/* Bottom is not yet to be used */
+.btn-grad-success {
+    background-image: linear-gradient(
+        to right,
+        rgb(52, 232, 158) 0%,
+        rgb(15, 52, 67) 51%,
+        rgb(52, 232, 158) 100%
+    );
+    border: none;
+
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 0.3rem;
+    display: block;
+}
+
+.btn-grad-success:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-grad-danger {
+    background-image: linear-gradient(
+        to right,
+        #6441a5 0%,
+        #2a0845 51%,
+        #6441a5 100%
+    );
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    display: block;
+}
+
+.btn-grad-danger:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-grad {
+    background-image: linear-gradient(
+        to right,
+        #ff4e50 0%,
+        #f9d423 51%,
+        #ff4e50 100%
+    );
+}
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

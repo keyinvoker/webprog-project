@@ -1,0 +1,8 @@
+table{
+    vertical-align: middle;
+    table-layout: fixed;
+    width: 100%;
+}
+tbody img{
+    max-width: 10rem !important;
+}
